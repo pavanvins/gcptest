@@ -8,9 +8,10 @@ terraform {
 }
 
 provider "google" {
-  credentials = file(format("%s/service-account.json", env("GCP_CREDS")))
+  credentials = file("C:\Users\91918\Downloads\terrafromgcp-223b10906830.json")  # Adjust path if needed
   project     = "terrafromgcp"
-  }
+  region      = "us-central1"
+}
 
 resource "google_compute_instance" "example" {
   name         = "my-instance1"
