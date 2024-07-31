@@ -8,19 +8,11 @@ terraform {
 }
 
 provider "google" {
-  credentials = data.google_compute_ssh_rsa_key.my_key.private_key
+  credentials = file(format("%s/service-account.json", env("GCP_CREDS")))
   project     = "terrafromgcp"
-  region      = "us-central1"
-}
-
-data "google_compute_ssh_rsa_key" "my_key" {
-  private_key = templatefile("${WORKSPACE}/service-account.json", {
-    KEY = credentials.gcp-keyterrafromgcp-223b10906830.json.secret  # Replace with your actual credential ID
-  })
-}
-
+  
 resource "google_compute_instance" "example" {
-  name         = "my-instance"
+  name         = "my-instance1"
   machine_type = "e2-medium"
 
   boot_disk {
