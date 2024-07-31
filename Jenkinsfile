@@ -2,11 +2,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/pavanvins/gcptest.git'
-            }
-        }
         stage('Terraform Init') {
             steps {
                 sh 'terraform init'
