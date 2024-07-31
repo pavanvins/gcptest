@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("C:\Users\91918\Downloads\terrafromgcp-223b10906830.json")  # Adjust path if needed
+  credentials = file("C:/Users/91918/Downloads/terrafromgcp-223b10906830.json")  # Adjust path if needed
   project     = "terrafromgcp"
   region      = "us-central1"
 }
