@@ -10,7 +10,8 @@ terraform {
 provider "google" {
   credentials = file(format("%s/service-account.json", env("GCP_CREDS")))
   project     = "terrafromgcp"
-  
+  }
+
 resource "google_compute_instance" "example" {
   name         = "my-instance1"
   machine_type = "e2-medium"
